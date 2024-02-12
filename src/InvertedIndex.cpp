@@ -40,8 +40,8 @@ void InvertedIndex::textProcessingInThread (string& way, int docID) {
 	mtx.lock();
 	cout << "way: " << way << " id: " << docID << endl;
 	mtx.unlock();
-
 #endif // DEBUG
+
 	ifstream file(way);
 	
 	string fileOutputs;
@@ -86,9 +86,9 @@ void InvertedIndex::UpdateDocumentBase(vector<string> input_docs) {
 	cout << "UpdateDocumentBase called" << endl;
 #endif // DEBUG
 	
-	//if (!freq_dictionary.empty()) //если список не пуст, то база сносится и создается новая
+	if (!freq_dictionary.empty()) //если список не пуст, то база сносится и создается новая
 	{
-		//freq_dictionary.clear(); 
+		freq_dictionary.clear(); 
 		/*
 		* в других случаях (когда база крупнее и объемнее) стоило бы хранить где-то в классе имена всех документов с их айдишниками
 		* и в момент обновления сравнивать содержимое документов с тем, что хранится где-то в памяти

@@ -1,10 +1,24 @@
 ﻿//#define DEBUG
+#define TESTING
+
 #include <iostream>
 #include <fstream>
 
 #include "Converter.h"
 #include "InvertedIndex.h"
 #include "SearchServer.h"
+#include "gtest/gtest.h"
+
+#ifdef TESTING
+	TEST(sample_test_case, sample_test)
+	{
+		EXPECT_EQ(1, 1);
+	}
+#endif // TESTING
+
+
+
+
 
 using namespace std;
 
